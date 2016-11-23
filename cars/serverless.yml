@@ -1,0 +1,28 @@
+service: cars
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  profile: sls-admin
+  stage: dev
+ 
+functions:
+  car:
+    handler: handler.cars
+    events:
+    - http:
+       path: cars
+       method: GET
+    - http:
+        path: cars/{id}
+        method: PUT
+        request:
+          parameters:
+            paths:
+              id: true
+    - http:
+        path: cars
+        method: POST       
+    
+plugins:
+  - serverless-offline

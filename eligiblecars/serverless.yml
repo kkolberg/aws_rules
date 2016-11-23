@@ -1,0 +1,16 @@
+service: eligiblecars
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+
+functions:
+  eligiblecars:
+    handler: handler.handler
+    events:
+      - http:
+          path: eligiblecars
+          method: post
+
+plugins:
+  - serverless-offline

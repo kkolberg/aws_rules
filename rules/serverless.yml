@@ -1,0 +1,18 @@
+service: carrules
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  profile: sls-admin
+  stage: dev
+ 
+functions:
+  carrules:
+    handler: handler.handler
+    events:
+    - http:
+       path: carrules
+       method: GET   
+    
+plugins:
+  - serverless-offline
