@@ -1,8 +1,8 @@
 'use strict';
 
-module.exports = function() {
-    var run = function(order, cars, values) {
-        var weightCal = function(order) {
+module.exports = function () {
+    var run = function (order, cars, values) {
+        var weightCal = function (order) {
             return order.items.reduce((sum, current) => (sum + (current.weight * current.qty)), 0);
         };
 
@@ -22,7 +22,9 @@ module.exports = function() {
                 return;
             }
 
-            filtered.push(item);
+            let cloned = Object.assign({}, item);
+            cloned.name = cloned.name + " total pallets";
+            filtered.push(cloned);
         });
 
 
