@@ -38,7 +38,7 @@ module.exports = function (lambda) {
 
         var callCarRules = function (cb) {
             var params = {
-                FunctionName: 'carrules-dev-carrules',
+                FunctionName: 'rules-dev-rules',
                 Payload: '{ "httpMethod" : "GET" }',
             };
 

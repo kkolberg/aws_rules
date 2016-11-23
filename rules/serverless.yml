@@ -1,4 +1,4 @@
-service: carrules
+service: rules
 
 provider:
   name: aws
@@ -7,11 +7,11 @@ provider:
   stage: dev
  
 functions:
-  carrules:
+  rules:
     handler: handler.handler
     events:
     - http:
-       path: carrules
+       path: rules
        method: GET   
     
 plugins:
