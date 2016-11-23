@@ -1,0 +1,16 @@
+service: filtercars
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+
+functions:
+  filtercars:
+    handler: handler.handler
+    events:
+      - http:
+          path: filtercars
+          method: post
+
+plugins:
+  - serverless-offline
